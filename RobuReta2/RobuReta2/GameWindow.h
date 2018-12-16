@@ -30,5 +30,8 @@ class GameWindow
 		}
 
 		~GameWindow();
+
+		int GetScreenWidth() { return SCREEN_WIDTH; }
+		int GetScreenHeight() { return SCREEN_HEIGHT; }
 };
 //GameWindow* GameWindow::window = NULL;

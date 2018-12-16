@@ -1,2 +1,3 @@
-﻿  main.cpp
+﻿  Letter.cpp
+c:\users\maxiv\documents\robureta2\robureta2\robureta2\letter.cpp(13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   RobuReta2.vcxproj -> C:\Users\maxiv\Documents\RobuReta2\RobuReta2\x64\Debug\RobuReta2.exe

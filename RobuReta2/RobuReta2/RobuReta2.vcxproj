@@ -84,11 +84,11 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\maxiv\Documents\RobuReta2\RobuReta2\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\maxiv\Documents\RobuReta2\RobuReta2\SDL2_image\include;C:\Users\maxiv\Documents\RobuReta2\RobuReta2\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\Users\maxiv\Documents\RobuReta2\RobuReta2\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\maxiv\Documents\RobuReta2\RobuReta2\SDL2_image\lib\x64;C:\Users\maxiv\Documents\RobuReta2\RobuReta2\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -124,10 +124,12 @@
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="Letter.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Waifu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="Letter.h" />
+    <ClInclude Include="Waifu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

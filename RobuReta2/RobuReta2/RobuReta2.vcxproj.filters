@@ -24,12 +24,18 @@
     <ClCompile Include="GameWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Waifu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Letter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Waifu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
