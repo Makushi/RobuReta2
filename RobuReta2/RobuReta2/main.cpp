@@ -13,8 +13,17 @@ int main(int argc, char* args[])
 	GameWindow *window = GameWindow::getWindowInstance();
 	SDL_Event e;
 	Letter *test = new Letter();
+
+	const int FPS = 60;
+	const int frameDelay = 1000 / FPS;
+
+	Uint32 frameStart;
+	int frameTime;
+
 	while (mainLoop)
 	{
+		frameStart = SDL_GetTicks();
+
 		while (SDL_PollEvent(&e) != 0)
 		{
 			//User requests quit
@@ -22,8 +31,20 @@ int main(int argc, char* args[])
 			{
 				mainLoop = false;
 			}
+		}
 
-			SDL_RenderPresent(window->gRenderer);
+		SDL_SetRenderDrawColor(window->gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+		SDL_RenderClear(window->gRenderer);
+
+		test->Move();
+
+		SDL_RenderPresent(window->gRenderer);
+
+		frameTime = SDL_GetTicks() - frameStart;
+
+		if (frameDelay > frameTime)
+		{
+			SDL_Delay(frameDelay - frameTime);
 		}
 	}
 
