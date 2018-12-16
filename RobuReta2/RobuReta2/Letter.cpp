@@ -6,46 +6,44 @@
 #include "Letter.h"
  
 
-Letter::Letter()
+Letter::Letter(int spawnPoint)
 {
 	GameWindow *window = GameWindow::getWindowInstance();
-	int spawnPoint = 0;
-	srand(time(NULL));
-	spawnPoint = rand() % 4 + 1;
+
 	switch (spawnPoint)
 	{
 		//top position
 		case 1:
-			pos_x = (window->GetScreenWidth() / 2) - (size_x / 2);
+			pos_x = (window->getScreenWidth() / 2) - (size_x / 2);
 			pos_y = 0;
 			speed_x = 0;
-			speed_y = 5;
+			speed_y = 1;
 			break;
 		//right position
 		case 2:
-			pos_x = (window->GetScreenWidth() - size_x);
-			pos_y = (window->GetScreenHeight() / 2) - (size_y / 2);
-			speed_x = -5;
+			pos_x = (window->getScreenWidth() - size_x);
+			pos_y = (window->getScreenHeight() / 2) - (size_y / 2);
+			speed_x = -1;
 			speed_y = 0;
 			break;
 		//bottom position
 		case 3:
-			pos_x = (window->GetScreenWidth() / 2) - (size_x / 2);
-			pos_y = (window->GetScreenHeight() - size_y);
+			pos_x = (window->getScreenWidth() / 2) - (size_x / 2);
+			pos_y = (window->getScreenHeight() - size_y);
 			speed_x = 0;
-			speed_y = -5;
+			speed_y = -1;
 			break;
 		//left position
 		case 4:
 			pos_x = 0;
-			pos_y = (window->GetScreenHeight() / 2) - (size_y / 2);
-			speed_x = 5;
+			pos_y = (window->getScreenHeight() / 2) - (size_y / 2);
+			speed_x = 1;
 			speed_y = 0;
 			break;
 		default:
 			break;
 	}
-	Render();
+	render();
 }
 
 
@@ -53,17 +51,33 @@ Letter::~Letter()
 {
 }
 
-void Letter::Move()
+void Letter::move()
 {
-	pos_x += speed_x;
-	pos_y += speed_y;
-	Render();
+	if (isSpawned)
+	{
+		pos_x += speed_x;
+		pos_y += speed_y;
+		render();
+	}
 }
 
-void Letter::Render()
+void Letter::render()
 {
 	GameWindow *window = GameWindow::getWindowInstance();
-	SDL_Rect fillRect = { pos_x, pos_y, size_x, size_y };
+	fillRect = { pos_x, pos_y, size_x, size_y };
 	SDL_SetRenderDrawColor(window->gRenderer, 0xFF, 0x00, 0x00, 0xFF);
 	SDL_RenderFillRect(window->gRenderer, &fillRect);
+}
+
+SDL_Rect Letter::getCollisionBox()
+{
+	return fillRect;
+}
+
+void Letter::spawn()
+{
+	if (!isSpawned)
+	{
+		isSpawned = true;
+	}
 }

@@ -2,11 +2,13 @@
 class Letter
 {
 public:
-	Letter();
+	Letter(int spawnPoint);
 	~Letter();
 
-	void Move();
-	void Render();
+	void move();
+	void render();
+	void spawn();
+	SDL_Rect getCollisionBox();
 
 private:
 	int size_x = 20;
@@ -15,5 +17,9 @@ private:
 	int speed_y = 0;
 	int pos_x = 0;
 	int pos_y = 0;
+
+	bool isSpawned = false;
+
+	SDL_Rect fillRect;
 };
 

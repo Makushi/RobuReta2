@@ -1,3 +1,7 @@
-﻿  Letter.cpp
-c:\users\maxiv\documents\robureta2\robureta2\robureta2\letter.cpp(13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  Game.cpp
+  Letter.cpp
+  main.cpp
+c:\users\maxiv\documents\robureta2\robureta2\robureta2\main.cpp(37): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\maxiv\documents\robureta2\robureta2\robureta2\main.cpp(97): warning C4018: '>': signed/unsigned mismatch
+  Generating Code...
   RobuReta2.vcxproj -> C:\Users\maxiv\Documents\RobuReta2\RobuReta2\x64\Debug\RobuReta2.exe
