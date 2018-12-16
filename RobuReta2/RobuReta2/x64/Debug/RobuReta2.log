@@ -2,6 +2,12 @@
 c:\users\maxiv\documents\robureta2\robureta2\robureta2\game.h(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 c:\users\maxiv\documents\robureta2\robureta2\robureta2\game.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 c:\users\maxiv\documents\robureta2\robureta2\robureta2\game.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\users\maxiv\documents\robureta2\robureta2\robureta2\game.cpp(130): warning C4018: '>': signed/unsigned mismatch
-c:\users\maxiv\documents\robureta2\robureta2\robureta2\game.cpp(160): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\maxiv\documents\robureta2\robureta2\robureta2\game.cpp(135): warning C4018: '>': signed/unsigned mismatch
+c:\users\maxiv\documents\robureta2\robureta2\robureta2\game.cpp(167): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Waifu.cpp
+  main.cpp
+c:\users\maxiv\documents\robureta2\robureta2\robureta2\game.h(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\maxiv\documents\robureta2\robureta2\robureta2\game.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\maxiv\documents\robureta2\robureta2\robureta2\game.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Generating Code...
   RobuReta2.vcxproj -> C:\Users\maxiv\Documents\RobuReta2\RobuReta2\x64\Debug\RobuReta2.exe

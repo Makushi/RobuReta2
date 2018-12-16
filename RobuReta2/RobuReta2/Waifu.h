@@ -10,7 +10,7 @@ class Waifu
 		SDL_Rect getCollisionBox();
 
 		void render();
-		void damage();
+		bool damage();
 
 	private:
 		int size_x = 20;

@@ -28,12 +28,17 @@ class Game
 		int frameTime;
 		int spawnTimer = 0;
 
+		int score = 0;
+
 		void run();
 		void handleInput();
 		void update();
 		void initEntities();
 		void initColliders();
 		void deleteEntities();
+		void checkCollisions();
+		void checkWaifu();
+		void updateScore(int deltaScore);
 		void drawDebugGrid();
 };
 

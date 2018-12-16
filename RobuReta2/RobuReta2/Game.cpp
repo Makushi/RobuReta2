@@ -13,6 +13,7 @@
 
 Game::Game()
 {
+	score = 0;
 }
 
 
@@ -52,12 +53,13 @@ void Game::handleInput()
 				{
 					letters[i]->reset();
 					missed = false;
+					updateScore(10);
 				}
 			}
 
 			if (missed)
 			{
-				printf("You missed\n");
+				isRunning = waifu->damage();
 			}
 		}
 		else if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_DOWN && e.key.repeat == 0)
@@ -69,12 +71,13 @@ void Game::handleInput()
 				{
 					letters[i]->reset();
 					missed = false;
+					updateScore(10);
 				}
 			}
 
 			if (missed)
 			{
-				printf("You missed\n");
+				isRunning = waifu->damage();
 			}
 		}
 		else if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_LEFT && e.key.repeat == 0)
@@ -86,12 +89,13 @@ void Game::handleInput()
 				{
 					letters[i]->reset();
 					missed = false;
+					updateScore(10);
 				}
 			}
 
 			if (missed)
 			{
-				printf("You missed\n");
+				isRunning = waifu->damage();
 			}
 		}
 		else if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_RIGHT && e.key.repeat == 0)
@@ -103,12 +107,13 @@ void Game::handleInput()
 				{
 					letters[i]->reset();
 					missed = false;
+					updateScore(10);
 				}
 			}
 
 			if (missed)
 			{
-				printf("You missed\n");
+				isRunning = waifu->damage();
 			}
 		}
 	}
@@ -141,6 +146,8 @@ void Game::update()
 	{
 		letters[i]->move();
 	}
+
+	checkWaifu();
 
 	waifu->render();
 	drawDebugGrid();
@@ -191,6 +198,23 @@ void Game::deleteEntities()
 	window->deleteWindowInstance();
 }
 
+void Game::checkCollisions()
+{
+
+}
+
+void Game::checkWaifu()
+{
+	for (int i = 0; i < std::size(letters); i++)
+	{
+		if (letters[i]->getIsSpawned() && SDL_HasIntersection(&letters[i]->getCollisionBox(), &waifu->getCollisionBox()))
+		{
+			letters[i]->reset();
+			isRunning = waifu->damage();
+		}
+	}
+}
+
 void Game::drawDebugGrid()
 {
 	for (int i = 0; i < window->getScreenHeight(); i += 20)
@@ -204,4 +228,10 @@ void Game::drawDebugGrid()
 		SDL_SetRenderDrawColor(window->gRenderer, 0x00, 0x00, 0xFF, 0xFF);
 		SDL_RenderDrawLine(window->gRenderer, j, 0, j, window->getScreenHeight());
 	}
+}
+
+void Game::updateScore(int deltaScore)
+{
+	score += deltaScore;
+	printf("Score : %d\n", score);
 }

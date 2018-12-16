@@ -1,6 +1,6 @@
 #include "Waifu.h"
 #include "GameWindow.h"
-
+#include <stdio.h>
 
 Waifu::Waifu()
 {
@@ -28,12 +28,14 @@ SDL_Rect Waifu::getCollisionBox()
 	return fillRect;
 }
 
-void Waifu::damage()
+bool Waifu::damage()
 {
 	health -= 10;
-
+	printf("Health remaining : %d\n", health);
 	if (health <= 0)
 	{
 		isAlive = false;
 	}
+
+	return isAlive;
 }
