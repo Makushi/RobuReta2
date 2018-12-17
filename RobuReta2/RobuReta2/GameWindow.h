@@ -3,7 +3,7 @@
 class GameWindow
 {
 	const int SCREEN_WIDTH = 640;
-	const int SCREEN_HEIGHT = 480;
+	const int SCREEN_HEIGHT = 640;
 
 	private:
 		static GameWindow *window;
